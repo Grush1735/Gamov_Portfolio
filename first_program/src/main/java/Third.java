@@ -7,9 +7,9 @@ public class Third {
         System.out.print ("Введите число: ");
         int a = scanner.nextInt();
         if (a%2==0) {
-            System.out.printf("%d - Это четное число", a);
+            System.out.printf("%d - Это четное число ", a);
         }   else {
-            System.out.printf("%d - Это нечетное число", a);
+            System.out.printf("%d - Это нечетное число ", a);
         }
 
 
