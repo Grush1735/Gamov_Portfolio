@@ -1,8 +1,6 @@
 import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
 
-public class Appilacation21 {
+public class Application21 {
 
     public static void main (String[] args){
         int CurrentAmount = num("Hey... is it   working?");
