@@ -27,7 +27,8 @@ public class Application23 {
                 }
             }
         }
-
+        String name = ;
+        System.out.println("Звонит %s", name);
         System.out.print(checker); // вывод ответа
     }
 
