@@ -25,7 +25,7 @@ public class Phone {
 
     }
 
-    void receiveCall(String name){
+    static void receiveCall(String name){
         System.out.println("Звонит " + name);
     }
 
@@ -58,7 +58,7 @@ public class Phone {
         System.out.print(iOS.number + ' ' + iOS.model + ' ' + iOS.weight);
         System.out.print(windows.number + ' ' + windows.model + ' ' + windows.weight);
 
-        receiveCall();
+        receiveCall("Vlad");
     }
 
 
