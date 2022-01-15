@@ -47,11 +47,11 @@ public class Phone {
         Phone android = new Phone();
         Phone iOS = new Phone();
         Phone windows = new Phone();
-        android.receiveCall();
+        android.receiveCall("Vlad");
         android.getNumber();
-        iOS.receiveCall();
+        iOS.receiveCall("Vlad");
         iOS.getNumber();
-        windows.receiveCall();
+        windows.receiveCall("Vlad");
         windows.getNumber();
 
         System.out.print(android.number + ' ' + android.model + ' ' + android.weight);
