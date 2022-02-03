@@ -84,6 +84,8 @@ public class Car {
         return carrying;
     }
 
+
+
     @Override
     public String toString() {
         return "Car{" +
@@ -91,6 +93,9 @@ public class Car {
                 ", carClass='" + carClass + '\'' +
                 ", carWeight=" + carWeight +
                 ", driver=" + driver.toString() +
-                ", engine=" + engine.toString();
+                ", engine=" + engine.toString() +
+                ", speed=" + speed +
+                ", carrying=" + carrying +
+                '}';
     }
 }

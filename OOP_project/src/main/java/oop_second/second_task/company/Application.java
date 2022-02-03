@@ -8,6 +8,6 @@ public class Application {
     public static void main(String[] args) {
         Car car = SportCar.getSportCar();
 
-        System.out.println(SportCar.toString());
+        System.out.println(car.toString());
     }
 }
