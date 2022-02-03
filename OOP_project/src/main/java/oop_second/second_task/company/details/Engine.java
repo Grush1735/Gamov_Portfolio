@@ -25,5 +25,11 @@ public class Engine {
         this.company = company;
     }
 
-
+    @Override
+    public String toString() {
+        return "{" +
+                "power=" + power +
+                ", company='" + company + '\'' +
+                '}';
+    }
 }

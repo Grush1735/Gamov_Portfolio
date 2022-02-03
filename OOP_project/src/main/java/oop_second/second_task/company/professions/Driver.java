@@ -20,5 +20,11 @@ public class Driver extends Person {
         this.experience = experience;
     }
 
-
+    @Override
+    public String toString() {
+        return "{" +
+                "experience=" + experience +
+                ", fullName='" + fullName + '\'' +
+                '}';
+    }
 }

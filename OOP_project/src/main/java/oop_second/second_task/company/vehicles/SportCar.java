@@ -18,5 +18,13 @@ public class SportCar extends carBuilder{
 
     SportCar sportCar = new SportCar();
 
+    @Override
+    public String toString() {
+        return "SportCar{" +
+                Car.toString() +
+                "speed=" + Car.getSpeed() +
+                '}';
+    }
+
 
 }

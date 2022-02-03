@@ -90,7 +90,7 @@ public class Car {
                 "marka='" + marka + '\'' +
                 ", carClass='" + carClass + '\'' +
                 ", carWeight=" + carWeight +
-                ", driver=" + driver +
-                ", engine=" + engine;
+                ", driver=" + driver.toString() +
+                ", engine=" + engine.toString();
     }
 }

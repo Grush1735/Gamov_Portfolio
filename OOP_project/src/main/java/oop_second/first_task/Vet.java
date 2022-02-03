@@ -2,11 +2,11 @@ package oop_second.first_task;
 
 public class Vet {
 
-    String food;
-    String animalName;
-    String location;
+    static String food;
+    static String animalName;
+    static String location;
 
-    public void treatAnimal(Animal animal){
+    public static void treatAnimal(Animal animal){
         System.out.printf("Дайте %s %s", animalName, food);
         System.out.printf("Данный %s живет в %sе", animalName, location);
     }

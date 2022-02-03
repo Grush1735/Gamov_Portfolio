@@ -3,7 +3,7 @@ package oop_second.second_task.company.vehicles;
 import oop_second.second_task.company.details.Engine;
 import oop_second.second_task.company.professions.Driver;
 
-public class carBuilder {
+public  class carBuilder {
 
     Car car = new Car();
 
