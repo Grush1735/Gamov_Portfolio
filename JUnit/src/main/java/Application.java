@@ -5,9 +5,12 @@ import java.util.regex.Pattern;
 public class Application {
     public static void main(String[] args) {
         String sent1 = "Проверка проверка... ";
-        String sent2 = "Проверка проверка... 1 2,3";
+        String sent2 = "Проверка проверка... 12,3";
         String sent3 = "У меня здесь (в этой строке) более много символов ! У меня здесь (в этой строке) более много символов !У меня здесь (в этой строке) более много символов !";
-        System.out.println(StringHelper.cut(sent3));
+        StringHelper string = new StringHelper(sent2);
         //System.out.println(StringHelper.getWordsCount(sent2));
+        //System.out.println(StringHelper.cut());
+        //System.out.println(StringHelper.find(10,"ерк"));
+        System.out.println(StringHelper.getFirstNumber());
     }
 }
