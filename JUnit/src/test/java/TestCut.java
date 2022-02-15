@@ -1,13 +1,12 @@
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CutTests extends TestSettings{
+public class TestCut extends TestSettings{
 
     // Возвращает строку, обрезанную до 100 символов с использованием многоточия в конце.
     // Многоточие также входит в лимит 100 символов.

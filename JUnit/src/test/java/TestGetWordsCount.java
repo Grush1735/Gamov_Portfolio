@@ -1,9 +1,10 @@
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.*;
-
-public class GetWordsCountTests extends TestSettings{
+@Tag("getter")
+public class TestGetWordsCount extends TestSettings{
 
     //Метод получает количество слов в строке с учетом спецсимволов. Цифра или число за слово не считается
 
