@@ -1,13 +1,12 @@
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class FindTests extends TestSettings{
+public class TestFind extends TestSettings{
 
     // метод ищет подстроку str, начиная с индекса index.
     // Если str найдена после индекса index, то возвращает подстроку исходной строки, начиная от позиции вхождения str.
