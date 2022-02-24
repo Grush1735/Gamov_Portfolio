@@ -4,7 +4,6 @@ import java.util.regex.Pattern;
 public class StringHelper {
 
     static String sentence;
-    //Pattern pattern = Pattern.compile("А.+а");
 
     public StringHelper (String sentence){
         StringHelper.sentence = sentence;
