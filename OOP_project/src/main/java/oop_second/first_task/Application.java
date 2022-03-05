@@ -2,16 +2,15 @@ package oop_second.first_task;
 
 public class Application {
 
-    public static void main(String[] args){
-        Dog dog = new Dog("влажный корм для собак", "город", "Собака", false, 3);
-        Cat cat = new Cat("влажный корм для котов", "деревн", "Кот", true, true);
-        Horse horse = new Horse("Овес", "загон", "Конь", true);
+    public static void main(String[] args) {
+        Animal dog = new Dog("Сухой корм для собак", "Большая клетка для собак");
+        Animal cat = new Cat("Сухой корм для котов", "Маленькая клетка для котов");
+        Animal horse = new Horse("Овес для лошадей", "Загон для лошадей");
 
-        Animal[] animal = new Animal[]{dog, cat, horse};
+        Animal[] animals = new Animal[]{dog, cat, horse};
 
         for (int i = 0; i < 3; i++){
-            Vet.treatAnimal(animal[i]);
+            Vet.treatAnimal(animals[i]);
         }
     }
-
 }

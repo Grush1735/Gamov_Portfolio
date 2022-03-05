@@ -1,30 +1,38 @@
 package oop_second.first_task;
 
-public class Cat extends Animal{
+public class Cat extends Animal {
 
-    boolean meows;
-    boolean scared;
+    private final String name = "Кот";
+    private String food;
+    private String location;
 
-    public Cat(String food, String location, String animalName, boolean meows, boolean scared) {
-        super(food, location, animalName);
-        this.meows = meows;
-        this.scared = scared;
+    public Cat (String food, String location){
+        this.food = food;
+        this.location = location;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getFood() {
+        return food;
     }
 
     @Override
     public void makeNoise(){
-        System.out.println(animalName + " спит");
+        System.out.printf("%s мяукает", name);
+    }
+
+    @Override
+    public void sleep(){
+        System.out.printf("%s спит в %s", name, location);
     }
 
     @Override
     public void eat(){
-        System.out.println("Кормим " + animalName + ' ' + food);
+        System.out.printf("%s кушает %s", name, food);
     }
-
-    @Override
-    public void sleep() {
-        System.out.println("Укладываем " + animalName + " спать");
-    }
-
-
 }

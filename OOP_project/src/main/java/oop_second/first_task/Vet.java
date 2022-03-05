@@ -1,16 +1,10 @@
 package oop_second.first_task;
 
 public class Vet {
-
-    static String food;
-    static String animalName;
-    static String location;
-
-    public static void treatAnimal(Animal animal){
-        System.out.printf("Дайте %s %s", animalName, food);
-        System.out.printf("Данный %s живет в %sе", animalName, location);
+    static void treatAnimal(Animal animal){
+        String food = animal.getFood();
+        String name = animal.getName();
+        System.out.printf("Принести %s для %s", food, name);
         System.out.println();
     }
-
-
 }
