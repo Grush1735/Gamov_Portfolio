@@ -3,48 +3,15 @@ package oop_second.second_task.company.vehicles;
 import oop_second.second_task.company.details.Engine;
 import oop_second.second_task.company.professions.Driver;
 
-public  class carBuilder {
+interface carBuilder {
 
-    Car car = new Car();
+    carBuilder useMarka(String marka);
 
-    public carBuilder useMarka(String marka){
-        car.setMarka(marka);
-        return this;
-    }
+    carBuilder useCarClass(String carClass);
 
-    public carBuilder useCarClass(String carClass){
-        car.setCarClass(carClass);
-        return this;
-    }
+    carBuilder useCarWeight(double carWeight);
 
-    public carBuilder useCarWeight(double carWeight){
-        car.setCarWeight(carWeight);
-        return this;
-    }
+    carBuilder useDriver(Driver driver);
 
-    public carBuilder useDriver(Driver driver){
-        car.setDriver(driver);
-        return this;
-    }
-
-    public carBuilder useEngine(Engine engine){
-        car.setEngine(engine);
-        return this;
-    }
-
-    public carBuilder setSportSpeed(double speed){
-        car.setSpeed(speed);
-        return this;
-    }
-
-    public carBuilder setCarrying(int carrying) {
-        car.setCarrying(carrying);
-        return this;
-    }
-
-    public Car build(){
-        return car;
-    }
-
-
+    carBuilder useEngine(Engine engine);
 }

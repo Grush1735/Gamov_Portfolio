@@ -12,16 +12,6 @@ public class Cat extends Animal {
     }
 
     @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getFood() {
-        return food;
-    }
-
-    @Override
     public void makeNoise(){
         System.out.printf("%s мяукает", name);
     }
