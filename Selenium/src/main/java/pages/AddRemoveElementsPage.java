@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -23,26 +24,31 @@ public class AddRemoveElementsPage extends BasePage {
     @FindBy(how = How.CSS, using = ".added-manually")
     private List<WebElement> buttonsRemoveElement;
 
+    @Step("Check if the page has been opened")
     public AddRemoveElementsPage checkPageIsDisplayed(){
         assertTrue(buttonAddElementButton.isDisplayed());
         return this;
     }
 
+    @Step("Click the button and add the element")
     public AddRemoveElementsPage addElement(){
         buttonAddElementButton.click();
         return this;
     }
 
+    @Step("Click the button and remove the first element")
     public AddRemoveElementsPage removeFirstElement(){
         buttonRemoveElementFirst.click();
         return this;
     }
 
+    @Step("Click the button and remove the second element")
     public AddRemoveElementsPage removeSecondElement(){
         buttonRemoveElementSecond.click();
         return this;
     }
 
+    @Step("Assert that number of the 'remove' buttons are {n}")
     public AddRemoveElementsPage assertRemoveButtonsCount(int n){
         assertEquals(buttonsRemoveElement.size(), n);
         return this;
