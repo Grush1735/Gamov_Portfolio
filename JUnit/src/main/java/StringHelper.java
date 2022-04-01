@@ -4,20 +4,17 @@ import java.util.regex.Pattern;
 public class StringHelper {
 
     static String sentence;
-    //Pattern pattern = Pattern.compile("А.+а");
 
     public StringHelper (String sentence){
         StringHelper.sentence = sentence;
     }
 
-    //работает
     public static long getWordsCount(){
         Pattern pattern = Pattern.compile("[^\\d\\s]+");
         Matcher matcher = pattern.matcher(sentence);
         return matcher.results().count();
     }
 
-    // работает
     public static String cut(){
         String match = null;
         if (sentence.length() > 97) {
@@ -28,7 +25,6 @@ public class StringHelper {
         return match;
     }
 
-    // работает
     public static String find(int index, String str){
         String match = sentence;
         Pattern pattern = Pattern.compile(str);
@@ -37,7 +33,6 @@ public class StringHelper {
         return match;
     }
 
-    // работает
     public static String getFirstNumber() {
         String number;
         Pattern pattern = Pattern.compile("[\\D\\s](\\d+)[\\D\\s]");
