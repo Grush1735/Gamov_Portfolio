@@ -21,6 +21,7 @@ public class Driver {
         driver = null;
     }
 
-
-
+    public static void close(){
+        driver.close();
+    }
 }

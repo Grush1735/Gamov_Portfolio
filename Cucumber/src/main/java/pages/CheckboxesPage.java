@@ -1,27 +1,23 @@
 package pages;
 
+import extensions.Element;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class CheckboxesPage extends BasePage {
 
-    @FindBy(css = "form#checkboxes input[type='checkbox']:nth-of-type(1)")
-    private WebElement checkboxFirst;
-
-    @FindBy(css = "form#checkboxes input[type='checkbox']:nth-of-type(1):checked")
-    private WebElement checkboxFirstChecked;
-
-    @FindBy(css = "form#checkboxes input[type='checkbox']:nth-of-type(2)")
-    private WebElement checkboxSecond;
-
-    @FindBy(css = "form#checkboxes input[type='checkbox']:nth-of-type(2):checked")
-    private WebElement checkboxSecondChecked;
+    private Element checkboxFirst = new Element(How.CSS, "form#checkboxes input[type='checkbox']:nth-of-type(1)");
+    private Element checkboxFirstChecked = new Element(How.CSS, "form#checkboxes input[type='checkbox']:nth-of-type(1):checked");
+    private Element checkboxSecond = new Element(How.CSS, "form#checkboxes input[type='checkbox']:nth-of-type(2)");
+    private Element checkboxSecondChecked = new Element(How.CSS, "form#checkboxes input[type='checkbox']:nth-of-type(2):checked");
 
     public CheckboxesPage checkPageIsDisplayed(){
-        checkboxFirst.isDisplayed();
-        checkboxSecondChecked.isDisplayed();
+        assertTrue(checkboxFirst.isDisplayed());
+        assertTrue(checkboxSecondChecked.isDisplayed());
         return this;
     }
 
@@ -36,7 +32,17 @@ public class CheckboxesPage extends BasePage {
     }
 
     public CheckboxesPage assertFirstCheckboxIsChecked(){
-        checkboxFirstChecked.isDisplayed();
+        assertTrue(checkboxFirstChecked.isDisplayed());
+        return this;
+    }
+
+    public CheckboxesPage assertSecondCheckboxIsChecked() {
+        assertTrue(checkboxSecondChecked.isDisplayed());
+        return this;
+    }
+
+    public CheckboxesPage assertFirstCheckboxIsNotChecked(){
+        assertFalse(checkboxFirstChecked.isDisplayed());
         return this;
     }
 
@@ -44,5 +50,4 @@ public class CheckboxesPage extends BasePage {
         assertFalse(checkboxSecondChecked.isDisplayed());
         return this;
     }
-
 }

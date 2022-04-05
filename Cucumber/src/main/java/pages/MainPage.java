@@ -1,22 +1,15 @@
 package pages;
 
 import extensions.Driver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import extensions.Element;
+import org.openqa.selenium.support.How;
 
 public class MainPage extends BasePage {
 
-    @FindBy(xpath = "//a[contains(@href, 'add_remove_elements')]")
-    private WebElement buttonAddRemoveElements;
-
-    @FindBy(css = "a[href*=checkboxes]")
-    private WebElement buttonCheckboxes;
-
-    @FindBy(css = "a[href*=dynamic_content]")
-    private WebElement buttonDynamicContent;
-
-    @FindBy(css = "a[href*=login]")
-    private WebElement buttonLoginPage;
+    private Element buttonAddRemoveElements = new Element(How.XPATH, "//a[contains(@href, 'add_remove_elements')]");
+    private Element buttonCheckboxes = new Element(How.CSS, "a[href*=checkboxes]");
+    private Element buttonDynamicContent = new Element(How.CSS, "a[href*=dynamic_content]");
+    private Element buttonLoginPage = new Element(How.CSS, "a[href*=login]");
 
     public MainPage open(){
         Driver.get().get(URL);
