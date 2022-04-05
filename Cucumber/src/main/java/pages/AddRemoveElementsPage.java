@@ -1,5 +1,7 @@
 package pages;
 
+import extensions.Element;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -11,17 +13,11 @@ import static org.junit.Assert.assertTrue;
 
 public class AddRemoveElementsPage extends BasePage {
 
-    @FindBy(how = How.XPATH, using = ".//button[@onclick='addElement()']")
-    private WebElement buttonAddElementButton;
-
-    @FindBy(how = How.CSS, using = ".added-manually:first-of-type")
-    private WebElement buttonRemoveElementFirst;
-
-    @FindBy(how = How.CSS, using = ".added-manually:nth-of-type(2)")
-    private WebElement buttonRemoveElementSecond;
-
-    @FindBy(how = How.CSS, using = ".added-manually")
-    private List<WebElement> buttonsRemoveElement;
+    private Element buttonAddElementButton = new Element(How.XPATH, ".//button[@onclick='addElement()']");
+    private Element buttonRemoveElementFirst = new Element(How.CSS, ".added-manually:first-of-type");
+    private Element buttonRemoveElementSecond = new Element(How.CSS, ".added-manually:nth-of-type(2)");
+    private Element buttonRemoveElement = new Element(How.CSS, ".added-manually");
+    private List<WebElement> buttonsRemoveElement() { return buttonRemoveElement.findElements(By.cssSelector(".added-manually")); };
 
     public AddRemoveElementsPage checkPageIsDisplayed(){
         assertTrue(buttonAddElementButton.isDisplayed());
@@ -44,7 +40,7 @@ public class AddRemoveElementsPage extends BasePage {
     }
 
     public AddRemoveElementsPage assertRemoveButtonsCount(int n){
-        assertEquals(buttonsRemoveElement.size(), n);
+        assertEquals(buttonsRemoveElement().size(), n);
         return this;
     }
 }

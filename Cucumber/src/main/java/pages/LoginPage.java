@@ -1,9 +1,8 @@
 package pages;
 
 import extensions.Driver;
+import extensions.Element;
 import extensions.User;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -15,20 +14,12 @@ public class LoginPage extends BasePage {
     private final String URI = "http://the-internet.herokuapp.com/login";
     public static User user = new User();
 
-    @FindBy(how = How.CSS, using = "#username")
-    private WebElement fieldUsername;
+    private Element fieldUsername = new Element(How.CSS, "#username");
+    private Element fieldPassword = new Element(How.CSS , "#password");
+    private Element buttonLogin = new Element(How.CSS , ".radius");
+    private Element filedSuccessLogin = new Element(How.CSS , "[class='flash success']");
+    private Element filedFailedLogin = new Element(How.CSS , "[class='flash error']");
 
-    @FindBy(css = "#password")
-    private WebElement fieldPassword;
-
-    @FindBy(css = ".radius")
-    private WebElement buttonLogin;
-
-    @FindBy(css = "[class='flash success']")
-    private WebElement filedSuccessLogin;
-
-    @FindBy(css = "[class='flash error']")
-    private WebElement filedFailedLogin;
 
     public LoginPage open(){
         Driver.get().navigate().to(URI);
@@ -36,9 +27,9 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage checkPageIsDisplayed(){
-        fieldUsername.isDisplayed();
-        fieldPassword.isDisplayed();
-        buttonLogin.isDisplayed();
+        assertTrue(fieldUsername.isDisplayed());
+        assertTrue(fieldPassword.isDisplayed());
+        assertTrue(buttonLogin.isDisplayed());
         return this;
     }
 

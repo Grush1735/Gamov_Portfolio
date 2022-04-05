@@ -1,8 +1,5 @@
 package steps;
 
-import extensions.Driver;
-import extensions.User;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,7 +22,7 @@ public class LoginSteps {
 
     @When("I go to the Login page")
     public void iGoToTheLoginPage() {
-        Pages.mainPage.goToLoginPage();
+        Pages.mainPage.goToLoginPage().checkPageIsDisplayed();
     }
 
     @When("I click login button")
@@ -53,10 +50,5 @@ public class LoginSteps {
     public void iSeeNotif(String notif) {
         if (Objects.equals(notif, "Successfull login"))  Pages.login_page.assertSuccessfulLogin();
         if (Objects.equals(notif, "Failed login"))  Pages.login_page.assertFailedLogin();
-    }
-
-    @And("I close the browser")
-    public void iCloseTheBrowser() {
-        Driver.quit();
     }
 }
