@@ -3,6 +3,8 @@ package extensions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
@@ -37,7 +39,8 @@ public class Element {
     }
 
     private WebElement get(){
-        return Driver.get().findElement(by);
+        WebDriverWait wait = new WebDriverWait(Driver.get(), 10);
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
     public List<WebElement> findElements(By by) {
